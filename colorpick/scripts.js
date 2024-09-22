@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const hslColor = `hsla(${hueRange.value}, ${saturationRange.value}%, ${lightnessRange.value}%, ${alphaRange.value})`;
     
   modifierColorDisplay.style.backgroundColor = hslColor;
+  };
    
   hueRange.addEventListener("input", updateFanColorAndState);
   saturationRange.addEventListener("input", updateFanColorAndState);
