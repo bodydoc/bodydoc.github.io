@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const ts0601SensorLink = document.getElementById("ts0601SensorLink");
   const mainFrame = document.getElementById("mainFrame");
 
+ if (homeLink) {
   homeLink.addEventListener("click", function(e) {
     e.preventDefault(); 
     mainFrame.src = "home.html"; 
   });
-
+ }
+ 
   colorPickerLink.addEventListener("click", function(e) {
     e.preventDefault(); 
     mainFrame.src = "colorpick/index.html";
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+if (modeToggle) {
   modeToggle.addEventListener('change', function () {
     if (modeToggle.checked) {
       document.body.classList.add('dark-mode');
@@ -59,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     sendModeToIframe(); 
   });
-
+}
 
   window.addEventListener('message', function (event) {
     if (event.data === 'iframe-ready') {
