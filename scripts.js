@@ -1,5 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
+  const homeLink = document.getElementById("homeLink");
   const colorPickerLink = document.getElementById("colorPickerLink");
   const ts0601SensorLink = document.getElementById("ts0601SensorLink");
   const mainFrame = document.getElementById("mainFrame");
