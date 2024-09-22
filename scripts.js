@@ -12,16 +12,19 @@ document.addEventListener("DOMContentLoaded", function() {
   });
  }
  
+ if (colorPickerLink)
   colorPickerLink.addEventListener("click", function(e) {
     e.preventDefault(); 
     mainFrame.src = "colorpick/index.html";
   });
+ }
 
+ if (ts0601SensorLink) {
   ts0601SensorLink.addEventListener("click", function(e) {
     e.preventDefault(); 
     mainFrame.src = "sensor/sensor-info.html"; 
   });
-  
+ } 
   
 });
 
