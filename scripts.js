@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
  }
  
- if (colorPickerLink)
+ if (colorPickerLink) {
   colorPickerLink.addEventListener("click", function(e) {
     e.preventDefault(); 
     mainFrame.src = "colorpick/index.html";
