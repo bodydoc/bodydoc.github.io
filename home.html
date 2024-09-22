@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <style>
+    /* Light mode default colors */
+   * CSS Variables for Light and Dark Mode */
+:root {
+  --background-color: #f6f8fa;
+  --sidebar-background: #ffffff;
+  --text-color: #24292e;
+  --menu-background: #ffffff;
+  --menu-text: #24292e;
+  --menu-hover: #00aaff;
+  --code-background: #f6f8fa;
+  --code-border: #e1e4e8;
+  --code-text: #24292e;
+}
+
+body.dark-mode {
+  --background-color: #1b202c;
+  --sidebar-background: #2c3038;
+  --text-color: #ffffff;
+  --menu-background: #2c3038;
+  --menu-text: #ffffff;
+  --menu-hover: #00aaff;
+  --code-background: #2d333b;
+  --code-border: #444c56;
+  --code-text: #ffffff;
+}
+/* Body and General Page Styling */
+body {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+}
+
+    p {
+      font-size: 16px;
+	 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Homepage</h1>
+    <p>This page temporary.</p>
+  </div>
+
+  <!-- JavaScript to receive dark/light mode messages from the parent page -->
+  <script>
+    // Listen for messages from the parent page about the dark/light mode
+    window.addEventListener('message', function (event) {
+      if (event.data === 'enable-dark-mode') {
+        document.body.classList.add('dark-mode');
+      } else if (event.data === 'disable-dark-mode') {
+        document.body.classList.remove('dark-mode');
+      }
+    });
+
+    // Notify the parent that the iframe is ready to receive messages
+    window.parent.postMessage('iframe-ready', '*');
+  </script>
+  <script src="scripts.js"></script>
+</body>
+</html>

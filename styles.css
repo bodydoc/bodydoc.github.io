@@ -1,0 +1,188 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variables for Light and Dark Mode */
+:root {
+  --background-color: #f6f8fa;
+  --sidebar-background: #ffffff;
+  --text-color: #24292e;
+  --menu-background: #ffffff;
+  --menu-text: #24292e;
+  --menu-hover: #00aaff;
+  --code-background: #f6f8fa;
+  --code-border: #e1e4e8;
+  --code-text: #24292e;
+}
+
+body.dark-mode {
+  --background-color: #1b202c;
+  --sidebar-background: #2c3038;
+  --text-color: #ffffff;
+  --menu-background: #2c3038;
+  --menu-text: #ffffff;
+  --menu-hover: #00aaff;
+  --code-background: #2d333b;
+  --code-border: #444c56;
+  --code-text: #ffffff;
+}
+
+/* Body and General Page Styling */
+body {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+}
+
+/* Sidebar Menu */
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-background);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s;
+}
+
+.menu-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--menu-text);
+}
+
+.menu-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-items li {
+  margin: 15px 0;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: var(--menu-text);
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.menu-items a:hover {
+  color: var(--menu-hover);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  background-color: var(--background-color);
+  padding: 20px;
+  overflow: hidden;
+  transition: background-color 0.3s;
+  display: flex; /* To ensure the iframe grows with the container */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Iframe Styling */
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: var(--background-color); /* Inherit background for iframe */
+  transition: background-color 0.3s;
+}
+
+/* Block Code Styling */
+pre {
+  background-color: var(--code-background);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--code-border);
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow: auto;
+  color: var(--code-text);
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+/* Inline Code Styling */
+code {
+  background-color: var(--code-background);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--code-text);
+  border: 1px solid var(--code-border);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark/Light Mode Toggle Switch */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 95%;
+  left: 50px;
+}
+
+.mode-label {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #00aaff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}

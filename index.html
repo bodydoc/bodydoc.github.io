@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Dark/Light Mode Toggle -->
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="modeToggle">
+      <span class="slider"></span>
+    </label>
+    <span class="mode-label" id="modeLabel">Light Mode</span>
+  </div>
+
+  <!-- Left Menu -->
+  <div class="sidebar">
+    <h2 class="menu-title"></h2>
+    <ul class="menu-items">
+	  <li><a href="#" id="homeLink">Home</a></li>
+      <li><a href="#" id="colorPickerLink">Color Picker</a></li>
+      <li><a href="#" id="ts0601SensorLink">TS0601 CO2 Sensor</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <iframe id="mainFrame" src="home.html" frameborder="0"></iframe>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

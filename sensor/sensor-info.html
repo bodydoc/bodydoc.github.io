@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TS0601 CO2 Sensor (_TZE200_3ejwxpmu)</title>
+   <link rel="stylesheet" href="sensor-info.css">
+</head>
+<body>
+  <h1>TS0601 CO2 Sensor (_TZE200_3ejwxpmu)</h1>
+  <br/>
+  <p>
+   NDIR CO2 sensor with delayed reporting.
+  </p>
+	<img src="https://github.com/bodydoc/TS0601_co2_sensor/raw/main/assets/sensor.jpg" alt="TS0601 CO2 Sensor" width="200">
+<p>
+I found similar solution made by @schauveau to solve same issue for Tuya Air Filter. Default time is 60 seconds. If you want to change it, edit the file and change "PUBLISH_DELAY"
+</p>
+ <div class="code-container">
+    <button class="copy-btn" onclick="copyCode()">Copy</button>
+    <pre><code id="code-block">PUBLISH_DELAY = 60.0;</code></pre>
+  </div>
+<br/>
+  <h3>Result:</h3>
+ 
+<img src="https://github.com/bodydoc/TS0601_co2_sensor/raw/main/assets/reports.png" alt="CO2 Sensor Reports" width="1000">
+
+  <h2>HOW TO INSTALL:</h2>
+  <hr><br/>
+  
+  <ul style="list-style-type:disc">
+    <li>Drop the file <b>TS0601_CO2.js</b> in the directory containing Zigbee2MQTT <b>configuration.yaml file</b></li>
+    <li>Add the external converter either via Z2M web frontend or in configuration.yaml</li>
+  
+  </ul>
+  
+ 
+  <div class="code-container">
+    <button class="copy-btn" onclick="copyCode()">Copy</button>
+    <pre><code id="code-block">external_converters:
+  - TS0601_CO2.js</code></pre>
+  </div>
+   
+  <div id="copyNotification" class="notification">Code copied to clipboard!</div>
+<br/>
+<ul style="list-style-type:disc">
+    <li>Restart Zigbee2MQTT</li>
+    <li>If the device description now read <b>NDIR CO2 sensor with delayed reporting</b> then the external converter was successully loaded.</li>
+  </ul>
+<br>
+
+<img src="https://github.com/bodydoc/TS0601_co2_sensor/raw/main/assets/success.png" alt="CO2 Sensor Success Report" width="600">
+  <h2>Link to Repository</h2>
+  <p>
+    For more information, visit the official GitHub repository:
+  </p><br/>
+  <p class="github-link">
+    <a href="https://github.com/bodydoc/TS0601_co2_sensor" target="_blank">TS0601 CO2 Sensor - GitHub Repository</a>
+  </p>
+  
+ 
+  <script>
+
+    window.addEventListener('message', function (event) {
+      if (event.data === 'enable-dark-mode') {
+        document.body.classList.add('dark-mode');
+      } else if (event.data === 'disable-dark-mode') {
+        document.body.classList.remove('dark-mode');
+      }
+    });
+
+    window.parent.postMessage('iframe-ready', '*');
+  </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
