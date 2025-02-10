@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const homeLink = document.getElementById("homeLink");
   const colorPickerLink = document.getElementById("colorPickerLink");
   const ts0601SensorLink = document.getElementById("ts0601SensorLink");
+  const hablueprints = document.getElementById("hablueprints");
   const mainFrame = document.getElementById("mainFrame");
 
  if (homeLink) {
@@ -23,6 +24,13 @@ document.addEventListener("DOMContentLoaded", function() {
   ts0601SensorLink.addEventListener("click", function(e) {
     e.preventDefault(); 
     mainFrame.src = "sensor/sensor-info.html"; 
+  });
+ } 
+ 
+ if (hablueprints) {
+  hablueprints.addEventListener("click", function(e) {
+    e.preventDefault(); 
+    mainFrame.src = "ha-blueprints/ha-blueprints.html"; 
   });
  } 
   

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Assistant Blueprints</title>
+   <link rel="stylesheet" href="ha-blueprints.css">
+</head>
+<body>
+  <h1>Zigbee2MQTT - ERS-10TZBVK-AA (Events only)</h1>
+  <br/>
+  <p>
+    This blueprint allows you to create automations for the ERS-10TZBVK-AA smart knob using MQTT.</p>
+    <p>It listens for MQTT events and maps them to Home Assistant actions. Credits to <a href="https://community.home-assistant.io/u/rdeangel" target="_new">@rdeangel</a> and <a href="https://community.home-assistant.io/u/pbergman" target="_new">@pbergman</a> for the blueprint!</p><br/>
+   
+    <p><b>**No Commands mode, only event mode**</b></p><br/>
+    
+    <p><b>**Supported Actions:**</b></p>
+    <p>- Single Press</p>
+    <p>- Double Press</p>
+    <p>- Hold Press</p>
+    <p>- Rotate Left/Right</p><br/>
+  
+    <p><b>**Setup:**</b></p>
+    - Ensure your knob is correctly configured in `zigbee2mqtt`.<br>
+    - Select the correct MQTT topic and device name.
+  </p>
+	<img src="https://github.com/bodydoc/ha-blueprints/raw/main/assets/friendly_name.png" alt="Friendly name">
+<p>
+  <a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://github.com/bodydoc/ha-blueprints/blob/main/ERS-10TZBVK-AA.yaml" target="_new"><img src="https://community-assets.home-assistant.io/original/3X/9/4/94379a79c42e3606b5b057dbd9fcf6092bb076f2.svg" alt="Import blueprint"></a>
+</p>
+
+<br>
+<hr>
+<br>
+<h1>Reserved for next blueprint</h1>
+
+
+  
+  <p class="github-link">
+    <a href="https://github.com/bodydoc" target="_blank">My GitHub Repository</a>
+  </p>
+  
+ 
+  <script>
+
+    window.addEventListener('message', function (event) {
+      if (event.data === 'enable-dark-mode') {
+        document.body.classList.add('dark-mode');
+      } else if (event.data === 'disable-dark-mode') {
+        document.body.classList.remove('dark-mode');
+      }
+    });
+
+    window.parent.postMessage('iframe-ready', '*');
+  </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
