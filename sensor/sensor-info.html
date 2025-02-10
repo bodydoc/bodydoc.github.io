@@ -29,31 +29,26 @@ I found similar solution made by @schauveau to solve same issue for Tuya Air Fil
   <hr><br/>
   
   <ul style="list-style-type:disc">
-    <li>Drop the file <b>TS0601_CO2.js</b> in the directory containing Zigbee2MQTT <b>configuration.yaml file</b></li>
-    <li>Add the external converter either via Z2M web frontend or in configuration.yaml</li>
-  
+    <li>Drop the file <b>TS0601_CO2.js</b> in <b>external_converters</b> directory in Zigbee2MQTT folder (<b>\config\zigbee2mqtt\external_converters</b>)</li>
+   <!-- <li>Add the external converter either via Z2M web frontend or in configuration.yaml</li>-->
+   <li>Restart Zigbee2MQTT</li>
+    <li>If the device description now read <b>NDIR CO2 sensor with delayed reporting</b> then the external converter was successully loaded.</li>
   </ul>
   
- 
+ <!-- 
   <div class="code-container">
     <button class="copy-btn" onclick="copyCode()">Copy</button>
     <pre><code id="code-block">external_converters:
   - TS0601_CO2.js</code></pre>
   </div>
-   
+-->
   <div id="copyNotification" class="notification">Code copied to clipboard!</div>
-<br/>
-<ul style="list-style-type:disc">
-    <li>Restart Zigbee2MQTT</li>
-    <li>If the device description now read <b>NDIR CO2 sensor with delayed reporting</b> then the external converter was successully loaded.</li>
-  </ul>
-<br>
 
 <img src="https://github.com/bodydoc/TS0601_co2_sensor/raw/main/assets/success.png" alt="CO2 Sensor Success Report" width="600">
   <h2>Link to Repository</h2>
   <p>
-    For more information, visit the official GitHub repository:
-  </p><br/>
+    For more information, visit the my GitHub repository:
+  </p>
   <p class="github-link">
     <a href="https://github.com/bodydoc/TS0601_co2_sensor" target="_blank">TS0601 CO2 Sensor - GitHub Repository</a>
   </p>
